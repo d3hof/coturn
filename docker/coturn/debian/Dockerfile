@@ -267,7 +267,9 @@ RUN apt-get update \
             libcap2-bin \
  && rm -rf /var/lib/apt/lists/*
 
-USER nobody:nogroup
+RUN useradd -u 3478 turnserver
+
+USER turnserver:turnserver
 
 EXPOSE 3478 3478/udp
 
